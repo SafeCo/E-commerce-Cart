@@ -1,0 +1,530 @@
+:root{
+	--slidervalue: 0;
+}
+
+*, *:before, *:after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
+}
+
+html {
+ overflow: hidden;
+}
+body{
+	min-height: 100vh;
+	min-width: 100%;
+	/*display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;*/
+}
+
+/*Layout*/
+
+.modal{
+	position: fixed;
+	z-index: 10;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	min-height: 80%;
+	min-width: 60%;
+	background-color: #eee;
+	border: solid black 1px;
+	border-radius: 5px;
+}
+
+
+
+.modal.active{
+	transform: translate(-50%, -50%) scale(1);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+} 
+
+.modal-header{
+	display: flex;
+	margin: 10px;
+	font-weight: bold;
+}
+.close-button{
+	position: fixed;
+	right: 5%;
+}
+
+.modal-body{
+	margin: 10px;
+	height: 300px;
+	width: 70%;
+	border-radius: 5px;
+	overflow-y: scroll;
+	background-color: white;
+}
+
+.modal-item{
+	display: grid;
+	grid-template-areas: 
+	'm-i-one m-i-five'
+	'm-i-one m-i-two'
+	'm-i-one m-i-three'
+	'm-i-one m-i-four';
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr 2fr 1fr 1fr;
+
+}
+
+.modal-item div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.modal-item {
+	padding-top: 5px;
+	background-color: white;
+	margin: 10px;
+	border-radius: 15px;
+	border: solid lightgrey 1px;
+	box-shadow:  0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.modal-item-pic{
+	grid-area: m-i-one;
+	object-fit: contain;
+	
+
+	
+}
+.modal-image {
+	max-height: 100px;
+	max-width: 100px;
+	overflow: hidden;
+	object-fit: contain;
+
+}
+.modal-item-title{
+	grid-area: m-i-two;
+	margin-right: 3%;
+}
+
+.modal-item-quantity{
+	grid-area: m-i-three;
+}
+
+.quantity{
+	border: solid black 1px;
+	background-color: white;
+	width: 50px;
+	height: 20px;
+}
+.modal-item-quantity button{
+	width: 25px;
+}
+
+.modal-item-delete{
+	grid-area: m-i-four;
+}
+
+.modal-item-delete svg{
+	position: relative;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background-color: white;
+	transition: 0.2s ease-in;
+}
+.modal-item-delete svg:hover{
+	cursor: pointer;
+	background-color: #2d2d2d;
+	color: white;
+	border-radius: 5px;
+}
+
+.modal-item-price{
+	grid-area: m-i-five;
+	font-weight: bold;
+}
+
+.modal-checkout-button{
+	margin-top: 20px;
+	height: 20px;
+	width: 100px;
+	border-radius: 5px;
+}
+.modal-checkout-button:hover{
+	background-color: #eee;
+	color: #525050;
+	cursor: pointer;
+}
+
+
+
+
+
+
+.close-button{
+	height: 20px;
+	width: 20px;
+	border-radius: 5px;
+}
+
+.overlay {
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 2;
+	transform: scale(0);
+	height: 100%;
+	width: 100%;
+}
+
+.overlay.active{
+		transform: scale(1);
+}
+
+
+
+
+.grid-container {
+	display: grid;
+	grid-template-areas: 
+	'one one one one'
+	'two two two two'
+	'three four four four';
+	grid-template-rows: 2fr 1fr 10fr ;
+	grid-template-columns: 1fr 4fr;
+	height: 100vh;
+	width: 100vw;
+
+}
+
+
+/*Things related to mini containter ONE*/
+
+.one{
+	grid-area: one;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	background-color: #2d2d2d;
+	color: white;
+	grid-template-areas: 
+	'minione minitwo minitwo minithree';
+	grid-template-columns: 1fr 2fr 1fr;
+}
+
+.one img{
+	margin-left: 10%;
+	height: 90%;
+}
+
+.search-bar{
+	grid-area: minitwo;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.search {
+	width: 400px;
+	height: 30px;
+	border: none;
+	border-radius: 10px 0px 0px 10px;
+	padding-left: 10px;
+} 
+.search-bar button{
+	border-radius: 0px 10px 10px 0px;
+	width: 80px;
+	height: 30px;
+	border: none;
+	cursor: pointer;
+}
+
+.sign-basket{
+	grid-area: minithree;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+.one-button{
+	border: solid #cccccc 2px;
+	border-radius: 12px;
+	height: 80px;
+	width: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 5px;
+	margin-right: 5px;
+	cursor: pointer;
+	color: white;
+}
+
+
+.one-button:hover{
+	background-color: #eee;
+	border: solid #747474 2px;
+	border-top: none;
+	border-bottom: none;
+	color: #525050;
+}
+
+
+
+
+
+/*Things related to mini container TWO*/
+.two{
+	grid-area: two;
+	background-color: #525050;
+	display: flex;
+	font-weight: bold;
+	border: solid #747474 1px;
+	border-top: none;
+	border-bottom: none;
+
+}
+
+.nav-options {
+	color: white;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.nav-options button{
+	min-width: 120px;
+	border: none;
+	background-color: #525050;
+	color: white;
+	cursor: pointer;
+}
+.nav-options button:hover{
+	background-color: #eee;
+	color: #525050;
+}
+
+
+
+
+
+/*Things relate to mini container THREE*/
+.three {
+	grid-area: three;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+.three > *{
+	margin-bottom: 40px;
+}
+
+
+.display-range{
+	border: solid black 2px;
+	min-width: 100px;
+	border-radius: 12px;
+}
+
+
+
+
+
+/*Things relate to mini container FOUR*/
+.four{
+	grid-area: four;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	overflow-y: scroll;
+}
+
+.test{
+	position: sticky;
+	top: 0;
+	background-color: white;
+	width: 100%;
+	height: 100%;
+}
+
+.test::after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-top: solid black 3px;
+	border-bottom: solid black 3px;
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+	
+	animation: rotate 5s infinite linear;
+}
+@keyframes rotate{
+    from{ transform: translate(-50%, -50%) rotate(-360deg); }
+    to{ transform: translate(-50%, -50%) rotate(360deg); }
+}
+.test::before{
+	content: 'Loading...';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+
+/*.test::after{
+	position: absolute;
+	content: '';
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: black;
+	border: solid black 2px;
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+
+}*/
+
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #ddd; 
+  border-radius: 15px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darkgray; 
+  border-radius: 15px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray; 
+}
+
+
+/*			Banner in Item 4*/
+.banner{
+	height: 200px;
+	width: 100%;
+	background-image: url("banner.jpg");
+	background-position: center;
+	position: relative;
+
+}
+
+.banner::after{
+	position: absolute;
+	top: 50%;
+	content: 'SALE';
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	color: white;
+	font-size: 100px;
+
+}
+
+
+
+
+/*					Items within Mini container*/
+.item-insert{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.item{
+	background-color: white;
+	height: 400px;
+	width: 300px;
+	margin: 10px;
+	border-radius: 15px;
+	border: solid lightgrey 1px;
+	box-shadow:  0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	transition: 0.3s ease-in;
+	display: grid;
+	grid-template-areas: 
+	'FMone FMone'
+	'FMtwo FMtwo'
+	'FMthree . '
+	'FMfour FMfive ';
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 7fr 1.5fr 0.75fr 1fr ;
+}
+
+.item:hover{
+	transform: scale(1.01) translatey(-5px);
+	box-shadow:  0 13px 23px rgba(0,0,0,0.19), 0 9px 9px rgba(0,0,0,0.23);
+	transition: transform 0.3s ease-in, box-shadow 0.3s ease-in ;
+}
+
+.image{
+	grid-area: FMone;
+	height: 300px;
+	width: 300px;
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.item-image {
+	height: 250px;
+	width: 250px;
+	object-fit: contain;
+}
+
+.html-title{
+	grid-area: FMtwo;
+	margin-left: 10px;
+	margin-right: 10px;
+	overflow: hidden;
+	
+}
+.html-old-price{
+	grid-area: FMthree;
+	font-size: 14px;
+	text-decoration: line-through;
+	display: flex;
+	margin-left: 10px;
+	align-items: flex-end;
+	align-items: ;
+}
+
+.html-new-price{
+	grid-area: FMfour;
+	display: flex;
+	margin-left: 10px;
+	align-items: flex-start;
+	color: red;
+	font-size: 23px;
+	
+}
+.add-to-basket {
+	grid-area: FMfive;
+	margin-left: 50%;
+	margin-bottom: 10%;
+	background-color: white;
+	border: none;
+	border-radius: 20px;
+	width: 50px;
+	font-size: 20px;
+	cursor: pointer;
+	transition: 0.2s ease-out;
+}
+
+.add-to-basket:hover{
+	background-color: #808080;
+	color: white;
+	transition: 0.2s ease-in;
+}

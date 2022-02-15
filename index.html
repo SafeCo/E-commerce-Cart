@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Ecommerce Website</title>
+</head>
+<body>
+	<div class="modal">
+		<div class="modal-header">
+			<div class="modal-title">Your Shopping Bag</div>
+			<button class="close-button ">X</button>
+		</div>
+		<div class="modal-body">
+			<div class="modal-item-insert">
+				<!-- <div class='modal-item' data-item-id='${ itemId }'>
+		          <div class='modal-item-pic'>
+		            <img class='modal-image' src='${ image }'>
+		          </div>
+		          <div class='modal-item-title'>${ title }</div>
+		          <div class='modal-item-quantity'>
+		            <button class='button modal-minus'>-</button>
+		            <div class='quantity quantity'>1</div>
+		            <button class='button modal-plus'>+</button>
+		          </div>
+		          <div class='modal-item-delete'>
+		            <button class='button modal-delete'><img src="trash3.svg"></button>
+		          </div>
+		          <div class='modal-item-price' data-price='${price}'>£${ price }</div>
+		       </div> -->
+			</div>
+		</div>
+		<h1 class="modal-total">Total Price £00.00</h1>
+		<button class="modal-checkout-button">Checkout</button>
+	</div>
+	<div class="overlay"></div>
+	
+	
+
+	<div class="grid-container">
+		<div class="one">
+		<img src="logo3.svg">
+		<form class="search-bar">
+			<input type="text" class="search" name="search">
+			<button>Search</button>
+		</form>
+		<div class="sign-basket">
+			<div class="one-button">Sign in</div>
+			<div class="one-button" id="basket">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+				  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+				</svg>
+				<div class="basket-number">0</div>
+			</div>
+		</div>
+		</div>
+
+
+
+		<div class="two">
+			<nav class="nav-options">
+				<button>All</button>
+				<button>Best Sellers</button>
+				<button>Gift Ideas</button>
+				<button>Technology</button>
+				<button>New Releases</button>
+				<button>Sale</button>
+			</nav>
+		</div>
+
+
+
+		<div class="three">
+			<h1>Filter</h1>
+			<div>
+				<label>Sort By</label>
+				<div>
+					<select id="dropdown">
+						<option value="1" id="rating">Recommended</option>
+						<option value="2" id="alphabetical">A-Z</option>
+						<option value="3" id="price-high-to-low">Price high to low</option>
+						<option value="4" id="price-low-to-high">Price low to high</option>
+					</select>
+				</div>
+			</div>
+			<div>
+				<p>Price Filter</p>
+				<div>	
+					<input type="range" min="1" value="1000" max="1000" id="price-range">
+				</div>
+				<div class="display-range"></div>
+			</div>
+		</div>
+
+
+
+		<div class="four vertical-scroll">
+			<div class="banner"></div>
+			<div class="loading"></div>
+				<div class="item-insert">
+					<!-- <div class='item'>
+            			<div class='image'>
+              				<img class='item-image' src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg">
+            			</div>
+              			<p class='html-title'>Mens Casual Premium Slim Fit T-Shirts THIS IS UNNDFJGJDSGFJHG</p>
+         				<p class='html-old-price'>£40.00</p>
+            			<p class='html-new-price'>22.99</p>
+          				<button class='add-to-basket' data-id='${id}' >Buy</button>            			
+          			</div> -->
+				</div>			
+		</div>
+	</div>
+	
+<script type="text/javascript" defer src="script.js"></script>
+</body>
+</html>
