@@ -97,7 +97,7 @@ let products = {
       total += parseFloat(x)
     }
     let grandTotal = Math.round(total*100)/100
-    modalGrandTotal.innerText = 'Total Price £' + grandTotal.toFixed(2)
+    modalGrandTotal.innerText = 'Total Price: £' + grandTotal.toFixed(2)
   },
 
   sortData: function(data, value){
@@ -232,7 +232,7 @@ let products = {
           <div class='modal-item-title'>${ title }</div>
           <div class='modal-item-quantity'>
             <button class='button modal-minus'>-</button>
-            <div class='quantity quantity'>1</div>
+            <div class='quantity'>1</div>
             <button class='button modal-plus'>+</button>
           </div>
           <div class='modal-item-delete'>
