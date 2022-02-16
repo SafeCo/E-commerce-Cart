@@ -306,6 +306,7 @@ body{
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 .nav-options button{
 	min-width: 120px;
@@ -391,20 +392,6 @@ body{
 
 
 
-/*.test::after{
-	position: absolute;
-	content: '';
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: black;
-	border: solid black 2px;
-	border-radius: 50%;
-	height: 200px;
-	width: 200px;
-
-}*/
-
 ::-webkit-scrollbar {
   width: 10px;
 
@@ -454,6 +441,7 @@ body{
 .item-insert{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .item{
@@ -540,4 +528,47 @@ body{
 	background-color: #808080;
 	color: white;
 	transition: 0.2s ease-in;
+}
+
+
+/*Media Queries for responsive design*/
+
+@media only screen and (max-width: 768px){
+	.grid-container{
+		grid-template-areas: 
+		'one'
+		'two'
+		'three'
+		'four';
+		grid-template-columns: 1fr;
+	}	
+	.one{
+		grid-template-areas: 
+		'minione minithree'
+		'minitwo minitwo';
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}	
+	.nav-options{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+}
+
+@media only screen and (max-width: 393px){
+	
+	.one{
+		grid-template-areas: 
+		'minione'
+		'minithree'
+		'minitwo';
+	}	
+	
+	.logo-container{
+	border-bottom: solid white 2px;
+	display: flex;
+	justify-content: center;
+	}
+	
 }
