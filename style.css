@@ -553,10 +553,20 @@ body{
 		display: flex;
 		flex-wrap: wrap;
 	}
+	.modal{
+		min-height: 80%;
+		min-width: 100%;
+	}
+	.three{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+
+	}
 
 }
 
-@media only screen and (max-width: 393px){
+@media only screen and (max-width: 394px){
 	
 	.one{
 		grid-template-areas: 
@@ -566,9 +576,17 @@ body{
 	}	
 	
 	.logo-container{
-	border-bottom: solid white 2px;
-	display: flex;
-	justify-content: center;
+		border-bottom: solid white 2px;
+		display: flex;
+		justify-content: center;
 	}
-	
+	.modal{
+		min-height: 50%;
+		min-width: 100%;
+	}
+	.modal-body{
+		width: 100%;	
+	}
+
+
 }
